@@ -28,7 +28,7 @@ def scroll():
     swipe(viewport[0] * 0.5,viewport[1] * 0.75,viewport[0] * 0.5,viewport[1] * 0.25,300)
 
 cantRepeticiones = 40
-tiempoEspera = 6
+tiempoEspera = 8
 viewport = get_screen_size()
 #Accede al rewards
 time.sleep(tiempoEspera)

@@ -76,7 +76,7 @@ busquedas = [
     "mercado libre"
 ]
 
-cantidadRepeticiones = 70
+cantidadRepeticiones = 40
 tiempoEspera = 10
 
 print("Bergonzi es un tipo muy crack y le sabe a la vida")

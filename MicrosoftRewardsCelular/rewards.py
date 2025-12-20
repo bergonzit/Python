@@ -66,7 +66,7 @@ def save_heatmap(screen_path, template_path, output_path="heatmap.png"):
     cv2.imwrite(output_path, heatmap_color)
     print("Heatmap guardado como:", output_path)
 
-cantRepeticiones = 20
+
 tiempoEspera = 8
 viewport = get_screen_size()
 #Accede al rewards
@@ -76,20 +76,21 @@ time.sleep(tiempoEspera*2)
 scroll()
 #Inicia ciclo de rewards
 i = 1
-while i < cantRepeticiones:
+while i <= 1:
     print("Inicia ciclo " , i)
     time.sleep(tiempoEspera)
     adb_screencap("screen.png")
     pos = find_image_on_screen("screen.png", "moneda.png")
     #Reinicia la pagina
     if not pos:
+        i += 1
         print("Resetea")
         tap(viewport[0] * 0.8,viewport[1] * 0.08)
         time.sleep(tiempoEspera)
         scroll()
         time.sleep(1)
     else :
-        i += 1
+        i = 0
         tap(pos[0], pos[1])
         time.sleep(tiempoEspera)
         tap(viewport[0] * 0.2,viewport[1] * 0.95)

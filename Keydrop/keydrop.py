@@ -1,7 +1,7 @@
 import pyautogui
 import time
 
-cantidadRepeticiones = 80
+cantidadRepeticiones = 40
 tiempoEsperaClick = 10
 tiempoEsperaSorteo = 60 * 2.5
 
@@ -15,7 +15,7 @@ def clickear(posX,posY):
 for i in range(cantidadRepeticiones):
     clickear(280,100) #Click en barra de marcadores
     clickear(1100,645) #Click en sorteo
-    clickear(1150,375) #Click entrar al sorteo
+    clickear(1150,500) #Click entrar al sorteo
     print("Ciclo ", (i+1), " de ", cantidadRepeticiones)
     esperar(tiempoEsperaSorteo) #Espera el tiempo restante
 exit()

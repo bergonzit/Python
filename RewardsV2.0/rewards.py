@@ -186,7 +186,6 @@ def busquedaImagen(imagen,region):
                 break
         if keep:
             filtered.append((x, y, sim))
-
     return filtered
 
 def ciclarBusqueda(mas,fin,region,multx,multy,pantalla):

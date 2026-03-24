@@ -18,11 +18,12 @@ def clickear(x,y):
     time.sleep(TIEMPO_CLICK/2)
 
 def busquedaImagen(imagen):
-    region = region = {
+    region = {
         "top": 0,
         "left": 0,
         "width": 1365,
         "height": 767
+
     }
     img = np.array(mss.mss().grab(region))
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -47,6 +48,8 @@ def busquedaImagen(imagen):
                 break
         if keep:
             filtered.append((x, y, sim))
+    if filtered == []:
+        filtered.append((0,0))
     return filtered
 
 imgUnirse = cv2.imread("unirse.png", 0)

@@ -54,7 +54,7 @@ def busquedaImagen(imagen):
 
 imgUnirse = cv2.imread("unirse.png", 0)
 imgSorteo = cv2.imread("sorteo.png", 0)
-for i in range(CANTIDAD_REPETICIONES):
+while True:
     clickear(280,100) #Click en barra de marcadores
     sorteos = busquedaImagen(imgUnirse)
     sorteo = max(sorteos, key=lambda p: p[0])

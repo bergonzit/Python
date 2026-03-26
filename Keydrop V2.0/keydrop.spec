@@ -5,7 +5,7 @@ a = Analysis(
     ['keydrop.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('unirse.png', '.'), ('sorteo.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

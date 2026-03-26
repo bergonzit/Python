@@ -4,6 +4,8 @@ import cv2
 import numpy as np
 import mss
 import matplotlib.pyplot as plt
+import sys
+import os
 
 CANTIDAD_REPETICIONES = 40
 TIEMPO_CLICK = 10
@@ -23,7 +25,6 @@ def busquedaImagen(imagen):
         "left": 0,
         "width": 1365,
         "height": 767
-
     }
     img = np.array(mss.mss().grab(region))
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -52,8 +53,15 @@ def busquedaImagen(imagen):
         filtered.append((0,0))
     return filtered
 
-imgUnirse = cv2.imread("unirse.png", 0)
-imgSorteo = cv2.imread("sorteo.png", 0)
+def resource_path(relative_path):
+    try:
+        # PyInstaller crea una carpeta temporal
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+imgUnirse = cv2.imread(resource_path("unirse.png"), 0)
+imgSorteo = cv2.imread(resource_path("sorteo.png"), 0)
 while True:
     clickear(280,100) #Click en barra de marcadores
     sorteos = busquedaImagen(imgUnirse)

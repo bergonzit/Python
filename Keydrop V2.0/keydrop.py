@@ -62,6 +62,7 @@ def resource_path(relative_path):
 
 imgUnirse = cv2.imread(resource_path("unirse.png"), 0)
 imgSorteo = cv2.imread(resource_path("sorteo.png"), 0)
+
 while True:
     clickear(280,100) #Click en barra de marcadores
     sorteos = busquedaImagen(imgUnirse)
@@ -69,6 +70,6 @@ while True:
     clickear(sorteo[0] + 123, sorteo[1] + 17)
     sorteo = busquedaImagen(imgSorteo)[0]
     clickear(sorteo[0] + 70,sorteo[1] + 20) #Click entrar al sorteo
-    print("Ciclo ", (i+1), " de ", CANTIDAD_REPETICIONES)
+    #print("Ciclo ", (i+1), " de ", CANTIDAD_REPETICIONES)
     esperar(TIEMPO_SORTEO) #Espera el tiempo restante
 exit()

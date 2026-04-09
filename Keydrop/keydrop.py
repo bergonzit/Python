@@ -14,11 +14,11 @@ def clickear(posX,posY):
     esperar(tiempoEsperaClick/2)
 
 
-cantidadRepeticiones = input("Cantidad de repeticiones: ")
-desvioX = input("Desvio Sorteo X: ")
-desvioY = input("Desvio Sorteo Y: ")
-entrarX = input("Desvio Entrar Sorteo X: ")
-entrarY = input("Desvio Entrar Sorteo Y: ")
+cantidadRepeticiones = int(input("Cantidad de repeticiones: "))
+desvioX = int(input("Desvio Sorteo X: "))
+desvioY = int(input("Desvio Sorteo Y: "))
+entrarX = int(input("Desvio Entrar Sorteo X: "))
+entrarY = int(input("Desvio Entrar Sorteo Y: "))
 for i in range(cantidadRepeticiones):
     clickear(280,100) #Click en barra de marcadores
     clickear(1100 + desvioX,512 + desvioY) #Click en sorteo
